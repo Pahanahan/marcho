@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "jquery": "^3.6.4",
-    "magnific-popup": "^1.2.0"
+    "magnific-popup": "^1.2.0",
+    "star-rating-svg": "^3.5.0"
   }
 }

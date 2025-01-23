@@ -6,13 +6,18 @@ $(function () {
     autoplay: true,
     autoplaySpeed: 2000,
   });
-  $('.video-fashion__play').magnificPopup({
-		disableOn: 700,
-		type: 'iframe',
-		mainClass: 'mfp-fade',
-		removalDelay: 160,
-		preloader: false,
+  $(".video-fashion__play").magnificPopup({
+    disableOn: 700,
+    type: "iframe",
+    mainClass: "mfp-fade",
+    removalDelay: 160,
+    preloader: false,
 
-		fixedContentPos: false
-	});
+    fixedContentPos: false,
+  });
+  $(".star").starRating({
+    starSize: 17,
+    initialRating: 4,
+    readOnly: true,
+  });
 });

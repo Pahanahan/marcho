@@ -12,6 +12,7 @@ function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.js',
     'node_modules/slick-carousel/slick/slick.js',
+    'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
     'app/js/main.js'
   ])
     .pipe(concat('main.min.js'))

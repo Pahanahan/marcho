@@ -20,6 +20,7 @@
     "slick-carousel": "^1.8.1"
   },
   "dependencies": {
-    "jquery": "^3.6.4"
+    "jquery": "^3.6.4",
+    "magnific-popup": "^1.2.0"
   }
 }

@@ -22,6 +22,7 @@
   "dependencies": {
     "jquery": "^3.6.4",
     "magnific-popup": "^1.2.0",
+    "rateyo": "^3.0.0-alpha.2",
     "star-rating-svg": "^3.5.0"
   }
 }

@@ -13,6 +13,11 @@ $bg: #f6f6f6;
   font-weight: 500;
 }
 
+%quicksand-700 {
+  font-family: "Quicksand-Bold", sans-serif;
+  font-weight: 700;
+}
+
 %roboto-400 {
   font-family: "Roboto-Regular", sans-serif;
   font-weight: 400;
@@ -36,4 +41,12 @@ $bg: #f6f6f6;
   padding: 12px 26px;
   @extend %roboto-400;
   box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
+}
+
+%checkbox-hidden{
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  position: absolute;
 }

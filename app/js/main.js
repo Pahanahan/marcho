@@ -1,4 +1,29 @@
 $(function () {
+  $(".product-tabs__top-item").on("click", function (e) {
+    e.preventDefault();
+    $(".product-tabs__top-item").removeClass("product-tabs__top-item--active");
+    $(this).addClass("product-tabs__top-item--active");
+
+    $(".product-tabs__content-item").removeClass("product-tabs__content-item--active");
+
+    $($(this).attr('href')).addClass("product-tabs__content-item--active");
+  });
+
+  $(".product-slide__thumb").slick({
+    asNavFor: ".product-slide__big",
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    focusOnSelect: true,
+    vertical: true,
+    draggable: false,
+  });
+  $(".product-slide__big").slick({
+    asNavFor: ".product-slide__thumb",
+    draggable: false,
+    arrows: false,
+    fade: true,
+  });
+
   $(".shop-content__filter-btn").on("click", function () {
     $(".shop-content__filter-btn").removeClass(
       "shop-content__filter-btn--active"
@@ -14,6 +39,7 @@ $(function () {
   });
 
   $(".select-style").styler();
+  $(".product-one__num").styler();
 
   $(".filter-price__input").ionRangeSlider({
     type: "double",
@@ -41,6 +67,8 @@ $(function () {
     ratedFill: "#ffc35b",
     readOnly: true,
   });
+
+  if (!document.querySelector(".promo__clock")) return;
 
   function getTimeRemaining(endtime) {
     const total = Date.parse(endtime) - Date.parse(new Date());

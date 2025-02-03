@@ -17,6 +17,7 @@ function scripts() {
     "node_modules/rateyo/src/jquery.rateyo.js",
     "node_modules/ion-rangeslider/js/ion.rangeSlider.js",
     "node_modules/jquery-form-styler/dist/jquery.formstyler.js",
+    "node_modules/leaflet/dist/leaflet.js",
     "app/js/main.js",
   ])
     .pipe(concat("main.min.js"))
@@ -32,38 +33,24 @@ function nunjucks() {
     .pipe(browserSync.stream());
 }
 
-// function styles() {
-//   return src(["app/scss/*.scss", "!app/scss/_*.scss"])
-//     .pipe(scss({ outputStyle: "compressed" }))
-//     .pipe(rename({ suffix: ".min" }))
-//     .pipe(autoprefixer({ overrideBrowserslist: ["last 10 version"] }))
-//     .pipe(dest("app/css"))
-//     .pipe(browserSync.stream());
-// }
-
-// function watching() {
-//   watch(["app/scss/style.scss"], styles);
-//   watch(["app/*.njk"], nunjucks);
-//   watch(["app/js/main.js"], scripts);
-//   watch(["app/*.html"]).on("change", browserSync.reload);
-// }
-
 function styles() {
-  return src('app/**/*.scss')
-    .pipe(rename({
-      suffix : '.min'
-    }))
-    .pipe(scss({ outputStyle: 'compressed' }))
-    .pipe(autoprefixer({ overrideBrowserslist: ['last 10 version'] }))
-    .pipe(dest('app/css'))
-    .pipe(browserSync.stream())
+  return src("app/scss/*.scss")
+    .pipe(
+      rename({
+        suffix: ".min",
+      })
+    )
+    .pipe(scss({ outputStyle: "compressed" }))
+    .pipe(autoprefixer({ overrideBrowserslist: ["last 10 version"] }))
+    .pipe(dest("app/css"))
+    .pipe(browserSync.stream());
 }
 
 function watching() {
-  watch(['app/**/*.scss'], styles);
-  watch(['app/*.njk'], nunjucks);
-  watch(['app/js/main.js'], scripts);
-  watch(['app/*.html']).on('change', browserSync.reload);
+  watch(["app/**/*.scss"], styles);
+  watch(["app/*.njk"], nunjucks);
+  watch(["app/js/main.js"], scripts);
+  watch(["app/*.html"]).on("change", browserSync.reload);
 }
 
 function browsersync() {
@@ -71,6 +58,7 @@ function browsersync() {
     server: {
       baseDir: "app/",
     },
+    notify: false,
   });
 }
 
